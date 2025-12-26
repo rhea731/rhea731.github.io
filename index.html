@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background-color: #333; color: white; padding: 1rem; text-align: center; }
+        nav { margin-top: 1rem; }
+        .tab-button { background: none; border: none; color: white; padding: 0.5rem 1rem; cursor: pointer; }
+        .tab-button.active { background-color: #555; }
+        main { padding: 2rem; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+        footer { background-color: #333; color: white; text-align: center; padding: 1rem; position: fixed; bottom: 0; width: 100%; }
+    </style>
+  </head>
+  <body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+        <nav>
+            <button class="tab-button active" onclick="openTab('home')">Home</button>
+            <button class="tab-button" onclick="openTab('about')">About</button>
+            <button class="tab-button" onclick="openTab('resume')">Resume</button>
+        </nav>
+    </header>
+    <main>
+        <div id="home" class="tab-content active">
+            <h2>Landing Page</h2>
+            <p>Welcome to my portfolio website. Here you can learn more about me and view my resume.</p>
+        </div>
+        <div id="about" class="tab-content">
+            <h2>About Me</h2>
+            <p>This is the main screen with my information.</p>
+            <p>Replace this with your personal details, skills, experience, etc.</p>
+        </div>
+        <div id="resume" class="tab-content">
+            <h2>My Resume</h2>
+            <p>Here is my resume.</p>
+            <!-- Embed PDF or list details -->
+            <p>Download my resume: <a href="resume.pdf">resume.pdf</a></p>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 My Name. All rights reserved.</p>
+    </footer>
+    <script>
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+  </body>
+</html>
